@@ -4,19 +4,23 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Cuarto.h"
+
+class Jugador;
+class Cuarto;
 
 class Jugador
 {
 private:
 	std::string nombre;
-	//const Cuarto* cuartoActual;
+	Cuarto* cuartoActual;
 	std::vector<Item*> items;
 public:
 	Jugador();
 	void setNombreJugador(string nombre);
-	//void setCuartoActual(const Cuarto* cuarto);
+	void setCuartoActual(Cuarto* cuarto);
 	const std::string getNombre();
-	//const Cuarto* getCuartoActual();
+	Cuarto* getCuartoActual();
 	void agregarItem(Item* i);
 	bool estadoArmado();
 };
