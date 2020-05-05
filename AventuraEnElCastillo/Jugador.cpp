@@ -3,7 +3,8 @@
 Jugador::Jugador()
 {
 	nombre = "";
-	cuartoActual = new Cuarto;
+	//cuartoActual=new Cuarto;
+
 }
 
 void Jugador::setNombreJugador(string nombre)
@@ -11,20 +12,10 @@ void Jugador::setNombreJugador(string nombre)
 	this->nombre = nombre;
 }
 
-void Jugador::setCuartoActual(Cuarto* cuarto)
-{
-	this->cuartoActual = cuarto;
-}
-
 const std::string Jugador::getNombre()
 {
 	return nombre;
-}
-
-Cuarto* Jugador::getCuartoActual()
-{
-	return cuartoActual;
-}
+}	
 
 void Jugador::agregarItem(Item* i)
 {

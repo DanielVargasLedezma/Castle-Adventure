@@ -156,13 +156,10 @@
     <ClCompile Include="Cuarto.cpp" />
     <ClCompile Include="Daga.cpp" />
     <ClCompile Include="Diamante.cpp" />
+    <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="Lanza.cpp" />
-    <ClCompile Include="Opcion.cpp" />
-    <ClCompile Include="OpcionAbrirCofre.cpp" />
-    <ClCompile Include="OpcionMovimiento.cpp" />
-    <ClCompile Include="OpcionSalir.cpp" />
     <ClCompile Include="Oro.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,13 +167,10 @@
     <ClInclude Include="Cuarto.h" />
     <ClInclude Include="Daga.h" />
     <ClInclude Include="Diamante.h" />
+    <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Lanza.h" />
-    <ClInclude Include="Opcion.h" />
-    <ClInclude Include="OpcionAbrirCofre.h" />
-    <ClInclude Include="OpcionMovimiento.h" />
-    <ClInclude Include="OpcionSalir.h" />
     <ClInclude Include="Oro.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

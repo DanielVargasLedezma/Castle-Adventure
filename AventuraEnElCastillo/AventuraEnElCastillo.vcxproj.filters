@@ -39,19 +39,10 @@
     <ClCompile Include="Cofre.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Opcion.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OpcionAbrirCofre.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OpcionMovimiento.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OpcionSalir.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Cuarto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemigo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,19 +68,10 @@
     <ClInclude Include="Cofre.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Opcion.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OpcionAbrirCofre.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OpcionMovimiento.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OpcionSalir.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Cuarto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemigo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
