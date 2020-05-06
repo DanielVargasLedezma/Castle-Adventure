@@ -61,7 +61,7 @@ void Cuarto::insertarCuarto(Cuarto* cuarto, int num, CA z)
 		}
 		break;
 	case 2: {
-		Cuarto* temp = Arriba;
+		Cuarto* temp = Arriba;                                                                                                  
 		switch (z)
 		{
 		case Cuarto::CA::arriba:

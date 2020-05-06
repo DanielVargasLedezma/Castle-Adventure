@@ -7,10 +7,11 @@ class Cofre
 {
 public:
 	Cofre(Item*);
+	Cofre(const Cofre& c);
 	bool EstaAbierto();
-	const Item* Abrir();
+	Item* Abrir();
 private:
-	const Item* Elemento;
+	Item* Elemento;
 	bool abierto;
 
 };

@@ -45,6 +45,18 @@
     <ClCompile Include="Enemigo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Opcion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpcionCofre.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpcionAtacar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpcionMovimiento.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Item.h">
@@ -72,6 +84,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Enemigo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Opcion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OpcionCofre.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OpcionAtacar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OpcionMovimiento.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

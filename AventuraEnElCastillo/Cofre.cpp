@@ -5,12 +5,18 @@ Cofre::Cofre(Item* Elemento)
 	this->Elemento = Elemento;
 }
 
+Cofre::Cofre(const Cofre& c)
+{
+	Elemento = c.Elemento;
+	abierto = abierto;
+}
+
 bool Cofre::EstaAbierto()
 {
 	return abierto;
 }
 
-const Item* Cofre::Abrir()
+Item* Cofre::Abrir()
 {
 	return Elemento;
 }
