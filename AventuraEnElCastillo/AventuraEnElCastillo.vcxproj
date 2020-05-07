@@ -164,6 +164,7 @@
     <ClCompile Include="OpcionAtacar.cpp" />
     <ClCompile Include="OpcionCofre.cpp" />
     <ClCompile Include="OpcionMovimiento.cpp" />
+    <ClCompile Include="OpcionSalir.cpp" />
     <ClCompile Include="Oro.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +180,7 @@
     <ClInclude Include="OpcionAtacar.h" />
     <ClInclude Include="OpcionCofre.h" />
     <ClInclude Include="OpcionMovimiento.h" />
+    <ClInclude Include="OpcionSalir.h" />
     <ClInclude Include="Oro.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

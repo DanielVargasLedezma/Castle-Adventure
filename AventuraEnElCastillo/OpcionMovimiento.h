@@ -6,8 +6,8 @@ class OpcionMovimiento : public Opcion
 {
 public:
 	OpcionMovimiento(OpcionesMenu opcion);
-	std::string textoOpcion();
-	std::string textoSalida(Jugador& j);
-	bool evaluar(Jugador& j);
+	std::string textoOpcion(OpcionesMenu opcion);
+	std::string textoSalida(OpcionesMenu opcion);
+	bool evaluar(Jugador& j, OpcionesMenu opcion);
 };
 #endif // !OPCIONMOVIMIENTO_H

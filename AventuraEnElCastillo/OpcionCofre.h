@@ -2,7 +2,6 @@
 #define OPCIONCOFRE_H
 #include "Opcion.h"
 #include "Cofre.h"
-#include <sstream>
 
 class OpcionCofre : public Opcion
 {

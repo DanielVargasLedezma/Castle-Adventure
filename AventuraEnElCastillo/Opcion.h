@@ -2,6 +2,7 @@
 #define OPCION_H
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "Jugador.h"
 
 class Opcion
