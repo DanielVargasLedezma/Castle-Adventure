@@ -158,6 +158,7 @@
     <ClCompile Include="Diamante.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="Lanza.cpp" />
     <ClCompile Include="Opcion.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Diamante.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Lanza.h" />
     <ClInclude Include="Opcion.h" />

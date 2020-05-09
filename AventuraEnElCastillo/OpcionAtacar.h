@@ -9,7 +9,7 @@ public:
 	OpcionAtacar(OpcionesMenu opcion);
 
 	std::string textoOpcion(Enemigo* e);
-	std::string textoSalida(Enemigo *e, Jugador& j);
-	bool evaluar(Jugador& j);
+	std::string textoSalida(Enemigo *e, Jugador* j);
+	bool evaluar(Jugador* j);
 };
 #endif // !1

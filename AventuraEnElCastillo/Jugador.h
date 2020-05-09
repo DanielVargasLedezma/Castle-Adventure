@@ -20,5 +20,7 @@ public:
 	Cuarto* getCuartoActual();
 	void agregarItem(Item* i);
 	bool estadoArmado();
+	bool tieneDaga();
+	bool tieneLanza();
 };
 #endif // !JUGADOR_H

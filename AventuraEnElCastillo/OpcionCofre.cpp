@@ -17,13 +17,16 @@ std::string OpcionCofre::textoSalida(Cofre *c)
 	stringstream x;
 	x << "Haz abierto el cofre." << endl;
 	x << "Haz obtenido el objeto: " << c->Abrir()->getNombre() << "!"<< endl;
+	if (c->Abrir()->getNombre() == "Diamante") {
+		x << "DIAMANTES" << endl;
+	}
 
 	return x.str();
 }
 
-bool OpcionCofre::evaluar(Jugador& j)
+bool OpcionCofre::evaluar(Jugador* j)
 {
-	if (j.getCuartoActual()->hayCofre()) {
+	if (j->getCuartoActual()->hayCofre()) {
 		return true;
 	}
 	else {

@@ -20,3 +20,8 @@ Item* Cofre::Abrir()
 {
 	return Elemento;
 }
+
+Cofre::~Cofre()
+{
+	delete Elemento;
+}

@@ -9,6 +9,6 @@ public:
 	OpcionCofre(OpcionesMenu opcion);
 	std::string textoOpcion();
 	std::string textoSalida(Cofre* c);
-	bool evaluar(Jugador& j);
+	bool evaluar(Jugador* j);
 };
 #endif

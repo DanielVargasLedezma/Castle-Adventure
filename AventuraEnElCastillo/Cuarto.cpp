@@ -104,6 +104,16 @@ void Cuarto::setCuartoAnterior(Cuarto* cuarto)
 	cuartoA = cuarto;
 }
 
+void Cuarto::setCofre(Cofre* c)
+{
+	this->c = c;
+}
+
+void Cuarto::setEnemigo(Enemigo* e)
+{
+	this->e = e;
+}
+
 bool Cuarto::hayArriba()
 {
 	if (Arriba) {
@@ -225,6 +235,7 @@ Cuarto::~Cuarto()
 			delete Izquierda;
 		}
 		else if (c) {
+			c->~Cofre();
 			delete c;
 		}
 		else if (e) {

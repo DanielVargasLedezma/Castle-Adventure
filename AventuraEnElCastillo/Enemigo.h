@@ -6,10 +6,10 @@ using namespace std;
 class Enemigo
 {
 public:
-	Enemigo(string nombre, string tipo);
+	Enemigo(string nombre);
 	string getNombre();
+	~Enemigo();
 private:
 	string nombre;
-	string tipo;
 };
 #endif

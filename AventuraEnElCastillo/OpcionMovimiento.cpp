@@ -47,12 +47,12 @@ std::string OpcionMovimiento::textoSalida(OpcionesMenu opcion)
 	return x.str();
 }
 
-bool OpcionMovimiento::evaluar(Jugador& j, OpcionesMenu opcion)
+bool OpcionMovimiento::evaluar(Jugador* j, OpcionesMenu opcion)
 {
 	switch (opcion)
 	{
 	case Opcion::OpcionesMenu::Arriba:
-		if (j.getCuartoActual()->hayArriba()) {
+		if (j->getCuartoActual()->hayArriba()) {
 			return true;
 		}
 		else {
@@ -60,7 +60,7 @@ bool OpcionMovimiento::evaluar(Jugador& j, OpcionesMenu opcion)
 		}
 		break;
 	case Opcion::OpcionesMenu::Abajo:
-		if (j.getCuartoActual()->hayAbajo()) {
+		if (j->getCuartoActual()->hayAbajo()) {
 			return true;
 		}
 		else {
@@ -68,7 +68,7 @@ bool OpcionMovimiento::evaluar(Jugador& j, OpcionesMenu opcion)
 		}
 		break;
 	case Opcion::OpcionesMenu::Derecha:
-		if (j.getCuartoActual()->hayDerecha()) {
+		if (j->getCuartoActual()->hayDerecha()) {
 			return true;
 		}
 		else {
@@ -76,7 +76,7 @@ bool OpcionMovimiento::evaluar(Jugador& j, OpcionesMenu opcion)
 		}
 		break;
 	case Opcion::OpcionesMenu::Izquiera:
-		if (j.getCuartoActual()->hayIzquierda()) {
+		if (j->getCuartoActual()->hayIzquierda()) {
 			return true;
 		}
 		else {

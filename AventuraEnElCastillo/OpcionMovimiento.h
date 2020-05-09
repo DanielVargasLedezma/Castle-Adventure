@@ -8,6 +8,6 @@ public:
 	OpcionMovimiento(OpcionesMenu opcion);
 	std::string textoOpcion(OpcionesMenu opcion);
 	std::string textoSalida(OpcionesMenu opcion);
-	bool evaluar(Jugador& j, OpcionesMenu opcion);
+	bool evaluar(Jugador* j, OpcionesMenu opcion);
 };
 #endif // !OPCIONMOVIMIENTO_H

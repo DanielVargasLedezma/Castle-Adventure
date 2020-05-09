@@ -10,9 +10,9 @@ public:
 	Cofre(const Cofre& c);
 	bool EstaAbierto();
 	Item* Abrir();
+	~Cofre();
 private:
 	Item* Elemento;
 	bool abierto;
-
 };
 #endif

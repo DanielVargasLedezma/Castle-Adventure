@@ -33,6 +33,8 @@ public:
 	void setIzquierda(Cuarto* cuarto);
 	void setDerecha(Cuarto* cuarto);
 	void setCuartoAnterior(Cuarto* cuarto);
+	void setCofre(Cofre* c);
+	void setEnemigo(Enemigo*e);
 
 	bool hayArriba();
 	bool hayAbajo();
