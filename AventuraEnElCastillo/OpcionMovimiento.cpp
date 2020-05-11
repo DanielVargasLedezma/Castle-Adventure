@@ -22,6 +22,9 @@ std::string OpcionMovimiento::textoOpcion(OpcionesMenu opcion)
 	case Opcion::OpcionesMenu::Izquiera:
 		x << "4- Ir al cuarto de la izquierda\n";
 		break;
+	case Opcion::OpcionesMenu::cuartoAnterior:
+		x << "7- Ir al cuarto anterior\n";
+		break;
 	}
 	return x.str();
 }
@@ -42,6 +45,9 @@ std::string OpcionMovimiento::textoSalida(OpcionesMenu opcion)
 		break;
 	case Opcion::OpcionesMenu::Izquiera:
 		x << "Te has movido al cuarto de la izquierda\n";
+		break;
+	case Opcion::OpcionesMenu::cuartoAnterior:
+		x << "Te has movido al cuarto anterior\n";
 		break;
 	}
 	return x.str();
@@ -77,6 +83,14 @@ bool OpcionMovimiento::evaluar(Jugador* j, OpcionesMenu opcion)
 		break;
 	case Opcion::OpcionesMenu::Izquiera:
 		if (j->getCuartoActual()->hayIzquierda()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		break;
+	case Opcion::OpcionesMenu::cuartoAnterior:
+		if (j->getCuartoActual()->hayCuartoA()) {
 			return true;
 		}
 		else {

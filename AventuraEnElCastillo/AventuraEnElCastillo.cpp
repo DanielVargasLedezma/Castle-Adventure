@@ -1,6 +1,7 @@
 #include <iostream>
-
+#include "Juego.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+	Juego j;
+	j.menu();
 }

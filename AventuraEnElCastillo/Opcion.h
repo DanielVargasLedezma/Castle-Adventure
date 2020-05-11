@@ -9,7 +9,7 @@ class Opcion
 {
 public:
 	enum class OpcionesMenu {
-		Arriba = 1, Abajo, Derecha, Izquiera, Atacar, Cofre, Salir
+		Arriba = 1, Abajo, Derecha, Izquiera, Atacar, Cofre, cuartoAnterior, Salir
 	};
 protected:
 	OpcionesMenu opcion;

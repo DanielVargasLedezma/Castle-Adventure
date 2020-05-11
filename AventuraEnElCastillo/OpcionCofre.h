@@ -6,8 +6,9 @@
 class OpcionCofre : public Opcion
 {
 public:
+	OpcionCofre();
 	OpcionCofre(OpcionesMenu opcion);
-	std::string textoOpcion();
+	std::string textoOpcion(Jugador* j);
 	std::string textoSalida(Cofre* c);
 	bool evaluar(Jugador* j);
 };

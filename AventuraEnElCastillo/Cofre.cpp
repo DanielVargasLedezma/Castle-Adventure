@@ -3,6 +3,7 @@
 Cofre::Cofre(Item* Elemento)
 {
 	this->Elemento = Elemento;
+	abierto = false;
 }
 
 Cofre::Cofre(const Cofre& c)
@@ -19,6 +20,11 @@ bool Cofre::EstaAbierto()
 Item* Cofre::Abrir()
 {
 	return Elemento;
+}
+
+void Cofre::cambiarEstado()
+{
+	abierto = true;
 }
 
 Cofre::~Cofre()

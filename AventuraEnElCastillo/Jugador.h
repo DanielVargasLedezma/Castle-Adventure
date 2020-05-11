@@ -12,6 +12,7 @@ private:
 	std::string nombre;
 	Cuarto* cuartoActual;
 	std::vector<Item*> items;
+	bool vivo;
 public:
 	Jugador();
 	void setNombreJugador(string nombre);
@@ -22,5 +23,7 @@ public:
 	bool estadoArmado();
 	bool tieneDaga();
 	bool tieneLanza();
+	bool estaVivo();
+	void matar();
 };
 #endif // !JUGADOR_H

@@ -36,13 +36,14 @@ Cuarto::Cuarto(const Cuarto& c)
 	numCuarto = c.numCuarto;
 }
 
-Cuarto::Cuarto(int n, Cuarto* c)
+Cuarto::Cuarto(int n, Cuarto* c, CA ca)
 {
 	Arriba = nullptr;
 	Abajo = nullptr;
 	Derecha = nullptr;
 	Izquierda = nullptr;
 	cuartoA = c;
+	posCuartoA = ca;
 	this->c = nullptr;
 	e = nullptr;
 	numCuarto = n;
@@ -213,6 +214,11 @@ Cuarto* Cuarto::getCuarto(int num, CA z)
 		break;
 	}
 	}
+}
+
+Enemigo* Cuarto::getEnemigo()
+{
+	return e;
 }
 
 Cuarto::~Cuarto()

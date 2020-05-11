@@ -6,7 +6,7 @@ class OpcionSalir : public Opcion
 public:
 	OpcionSalir();
 
-	std::string textoOpcion();
+	std::string textoOpcion(Jugador *j);
 	std::string textoSalida();
 };
 #endif

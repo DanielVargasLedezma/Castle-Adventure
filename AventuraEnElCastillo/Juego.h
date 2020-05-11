@@ -9,6 +9,7 @@
 #include "Diamante.h"
 #include "Lanza.h"
 #include "Oro.h"
+#include "Windows.h"
 
 class Juego
 {
@@ -17,6 +18,8 @@ private:
 	Jugador* j;
 public:
 	Juego();
+	void menu();
 	void iniciarCuartos();
+	void opciones(Jugador* j);
 };
 #endif

@@ -4,7 +4,7 @@ Jugador::Jugador()
 {
 	nombre = "";
 	cuartoActual=nullptr;
-
+	vivo = true;
 }
 
 void Jugador::setNombreJugador(string nombre)
@@ -70,4 +70,14 @@ bool Jugador::tieneLanza()
 		}
 	}
 	return false;
+}
+
+bool Jugador::estaVivo()
+{
+	return vivo;
+}
+
+void Jugador::matar()
+{
+	vivo = false;
 }

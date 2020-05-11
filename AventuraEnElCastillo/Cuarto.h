@@ -9,7 +9,7 @@ class Cuarto
 {
 public:
 	enum class CA {
-		arriba = 1, abajo, derecha, izquierda 
+		arriba = 1, abajo, derecha, izquierda
 	};
 private:
 	Cuarto* Arriba;
@@ -17,6 +17,7 @@ private:
 	Cuarto* Derecha;
 	Cuarto* Izquierda;
 	Cuarto* cuartoA;
+	CA posCuartoA;
 	int numCuarto;
 	Cofre* c;
 	Enemigo* e;
@@ -24,7 +25,7 @@ public:
 	Cuarto();
 	Cuarto(int n);
 	Cuarto(const Cuarto& c);
-	Cuarto(int n, Cuarto* c);
+	Cuarto(int n, Cuarto* c, CA ca);
 
 	void insertarCuarto(Cuarto* cuarto, int num, CA z);
 
@@ -45,6 +46,7 @@ public:
 	bool hayCuartoA();
 
 	Cuarto* getCuarto(int num, CA z);
+	Enemigo* getEnemigo();
 
 	~Cuarto();
 };

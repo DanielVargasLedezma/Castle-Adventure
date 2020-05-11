@@ -23,6 +23,7 @@ std::string OpcionAtacar::textoSalida(Enemigo* e, Jugador* j)
 			}else{
 				x << "Tu arma no tiene ningun efecto contra este enemigo" << endl;
 				x << "F, has muerto" << endl;
+				j->matar();
 			}
 		}
 		else if(e->getNombre()=="Ghoul"){
@@ -31,11 +32,13 @@ std::string OpcionAtacar::textoSalida(Enemigo* e, Jugador* j)
 			}else{
 				x << "Tu arma no tiene ningun efecto contra este enemigo" << endl;
 				x << "F, has muerto" << endl;
+				j->matar();
 			}
 		}
 	}else{
 		x << "No tienes ningun arma" << endl;
 		x << "F, has muerto" << endl;
+		j->matar();
 	}
 	return x.str();
 }

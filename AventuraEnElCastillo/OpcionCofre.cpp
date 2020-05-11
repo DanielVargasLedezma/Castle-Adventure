@@ -1,11 +1,15 @@
 #include "OpcionCofre.h"
 
+OpcionCofre::OpcionCofre()
+{
+}
+
 OpcionCofre::OpcionCofre(OpcionesMenu opcion)
 {
 	this->opcion = opcion;
 }
 
-std::string OpcionCofre::textoOpcion()
+std::string OpcionCofre::textoOpcion(Jugador* j)
 {
 	stringstream x;
 	x << "6- Abrir cofre" << endl;
@@ -17,6 +21,7 @@ std::string OpcionCofre::textoSalida(Cofre *c)
 	stringstream x;
 	x << "Haz abierto el cofre." << endl;
 	x << "Haz obtenido el objeto: " << c->Abrir()->getNombre() << "!"<< endl;
+	c->cambiarEstado();
 	if (c->Abrir()->getNombre() == "Diamante") {
 		x << "DIAMANTES" << endl;
 	}
