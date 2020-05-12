@@ -7,9 +7,12 @@ class Enemigo
 {
 public:
 	Enemigo(string nombre);
+	void matar();
+	bool getEstado();
 	string getNombre();
 	~Enemigo();
 private:
 	string nombre;
+	bool estado;
 };
 #endif

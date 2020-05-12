@@ -3,7 +3,7 @@
 Jugador::Jugador()
 {
 	nombre = "";
-	cuartoActual=nullptr;
+	cuartoActual = nullptr;
 	vivo = true;
 }
 
@@ -80,4 +80,27 @@ bool Jugador::estaVivo()
 void Jugador::matar()
 {
 	vivo = false;
+}
+
+string Jugador::Inventario()
+{
+	std::stringstream x;
+	x << "Inventario de " << nombre << ":" << endl;
+	for (std::vector<const Item*>::size_type i = 0; i < items.size(); i++) {
+		if (!items[i]) {
+			x << "No tienes items" << endl;
+			return x.str();
+		}
+		else {
+			x << " | " << items[i]->getNombre() << " | ";
+		}
+	}
+	stringstream y;
+	y << "Inventario de " << nombre << ":" << endl;
+	if (x.str() == y.str()) {
+		x << "No tienes items" << endl;
+	}
+	x << endl;
+	
+	return x.str();
 }

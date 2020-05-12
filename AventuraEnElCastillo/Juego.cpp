@@ -71,6 +71,7 @@ void Juego::iniciarCuartos()
 
 void Juego::opciones(Jugador *j)
 {
+	stringstream x;
 	int op = 0;
 	std::vector<int> vec;
 	bool verificar = false;
@@ -85,41 +86,45 @@ void Juego::opciones(Jugador *j)
 	Opcion::OpcionesMenu e = Opcion::OpcionesMenu::cuartoAnterior;
 	
 	if (om->evaluar(j, a)) {
-		cout << om->textoOpcion(a);
+		x << om->textoOpcion(a);
 		vec.push_back(1);
 	}
 	if (om->evaluar(j, b)) {
-		cout << om->textoOpcion(b);
+		x << om->textoOpcion(b);
 		vec.push_back(2);
 	}
 	if (om->evaluar(j, c)) {
-		cout << om->textoOpcion(c);
+		x << om->textoOpcion(c);
 		vec.push_back(3);
 	}
 	if (om->evaluar(j, d)) {
-		cout << om->textoOpcion(d);
+		x << om->textoOpcion(d);
 		vec.push_back(4);
 	}
 	if (oa->evaluar(j)) {
-		cout << oa->textoOpcion(j->getCuartoActual()->getEnemigo());
+		x << oa->textoOpcion(j->getCuartoActual()->getEnemigo());
 		vec.push_back(5);
 	}
 	if (oc->evaluar(j)) {
-		cout << oc->textoOpcion(j);
+		x << oc->textoOpcion(j);
 		vec.push_back(6);
 	}
 	if (om->evaluar(j, e)) {
-		cout << om->textoOpcion(e);
+		x << om->textoOpcion(e);
 		vec.push_back(7);
 	}
-	cout << os->textoOpcion(j);
+	x << os->textoOpcion(j);
 	vec.push_back(8);
-	P:
+P:
+	cout << j->Inventario();
+	cout << x.str();
 	cin >> op;
 	if (cin.fail()) {
 		cin.clear();
 		cin.ignore();
-		cout << "Se digito una opcion invalida, favor digite algo valido" << endl << endl;
+		cout << "Se digito una opcion invalida, favor digite algo valido" << endl;
+		system("pause");
+		system("cls");
 		goto P;
 	}
 	for (int i = 0; i < vec.size(); i++) {
@@ -128,7 +133,58 @@ void Juego::opciones(Jugador *j)
 		}
 	}
 	if (!verificar) {
-		cout << "Se digito una opcion no valida, favor digitar una opcion disponible" << endl << endl;
+		cout << "Se digito una opcion no valida, favor digitar una opcion disponible" << endl;
+		system("pause");
+		system("cls");
 		goto P;
+	}
+
+	switch (op)
+	{
+	case 1: {
+		cout << om->textoSalida(a);
+		Cuarto::CA i = Cuarto::CA::arriba;
+		j->setCuartoActual(j->getCuartoActual()->getCuarto(i));
+		system("pause");
+		break;
+	}
+	case 2: {
+		cout << om->textoSalida(b);
+		Cuarto::CA i = Cuarto::CA::abajo;
+		j->setCuartoActual(j->getCuartoActual()->getCuarto(i));
+		system("pause");
+		break;
+	}
+	case 3: {
+		cout << om->textoSalida(c);
+		Cuarto::CA i = Cuarto::CA::derecha;
+		j->setCuartoActual(j->getCuartoActual()->getCuarto(i));
+		system("pause");
+		break;
+	}
+	case 4: {
+		cout << om->textoSalida(d);
+		Cuarto::CA i = Cuarto::CA::izquierda;
+		j->setCuartoActual(j->getCuartoActual()->getCuarto(i));
+		system("pause");
+		break;
+	}
+	case 5:
+		cout << oa->textoSalida(j->getCuartoActual()->getEnemigo(), j);
+		system("pause");
+		break;
+	case 6:
+		cout << oc->textoSalida(j->getCuartoActual()->getCofre(), j);
+		system("pause");
+		break;
+	case 7:
+		cout << om->textoSalida(e);
+		j->setCuartoActual(j->getCuartoActual()->getCuartoA());
+		system("pause");
+		break;
+	case 8:
+		cout << os->textoSalida(j);
+		system("pause");
+		break;
 	}
 }

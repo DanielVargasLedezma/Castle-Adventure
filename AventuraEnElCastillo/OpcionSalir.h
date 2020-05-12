@@ -7,6 +7,6 @@ public:
 	OpcionSalir();
 
 	std::string textoOpcion(Jugador *j);
-	std::string textoSalida();
+	std::string textoSalida(Jugador* j);
 };
 #endif

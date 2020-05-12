@@ -9,7 +9,7 @@ public:
 	OpcionCofre();
 	OpcionCofre(OpcionesMenu opcion);
 	std::string textoOpcion(Jugador* j);
-	std::string textoSalida(Cofre* c);
+	std::string textoSalida(Cofre* c, Jugador* j);
 	bool evaluar(Jugador* j);
 };
 #endif

@@ -45,8 +45,10 @@ public:
 	bool hayEnemigo();
 	bool hayCuartoA();
 
-	Cuarto* getCuarto(int num, CA z);
+	Cuarto* getCuarto(CA z);
 	Enemigo* getEnemigo();
+	Cofre* getCofre();
+	Cuarto* getCuartoA();
 
 	~Cuarto();
 };

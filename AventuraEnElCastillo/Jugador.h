@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "Cuarto.h"
+#include <sstream>
 
 class Jugador
 {
@@ -25,5 +26,6 @@ public:
 	bool tieneLanza();
 	bool estaVivo();
 	void matar();
+	string Inventario();
 };
 #endif // !JUGADOR_H

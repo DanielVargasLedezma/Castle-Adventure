@@ -185,34 +185,24 @@ bool Cuarto::hayCuartoA()
 	}
 }
 
-Cuarto* Cuarto::getCuarto(int num, CA z)
+Cuarto* Cuarto::getCuarto( CA z)
 {
-	switch (num)
+	switch (z)
 	{
-	case 1:
-		switch (z)
-		{
-		case Cuarto::CA::arriba:
-			return Arriba;
-			break;
-		}
+	case Cuarto::CA::arriba:
+		return Arriba;
 		break;
-	case 2: {
-		Cuarto* temp = Arriba;
-		switch (z)
-		{
-		case Cuarto::CA::arriba:
-			return temp->Arriba;
-			break;
-		case Cuarto::CA::derecha:
-			return temp->Derecha;
-			break;
-		case Cuarto::CA::izquierda:
-			return temp->Izquierda;
-			break;
-		}
+	case Cuarto::CA::abajo:
+		return Abajo;
 		break;
-	}
+	case Cuarto::CA::derecha:
+		return Derecha;
+		break;
+	case Cuarto::CA::izquierda:
+		return Izquierda;
+		break;
+	default:
+		break;
 	}
 }
 
@@ -221,27 +211,37 @@ Enemigo* Cuarto::getEnemigo()
 	return e;
 }
 
+Cofre* Cuarto::getCofre()
+{
+	return c;
+}
+
+Cuarto* Cuarto::getCuartoA()
+{
+	return cuartoA;
+}
+
 Cuarto::~Cuarto()
 {
 	while(Arriba || Abajo || Derecha || Izquierda || c || e){
 		if (Arriba) {
-			Arriba->~Cuarto();
+			//Arriba->~Cuarto();
 			delete Arriba;
 		}
 		else if (Abajo) {
-			Abajo->~Cuarto();
+			//Abajo->~Cuarto();
 			delete Abajo;
 		}
 		else if (Derecha) {
-			Derecha->~Cuarto();
+			//Derecha->~Cuarto();
 			delete Derecha;
 		}
 		else if (Izquierda) {
-			Izquierda->~Cuarto();
+			//Izquierda->~Cuarto();
 			delete Izquierda;
 		}
 		else if (c) {
-			c->~Cofre();
+			//c->~Cofre();
 			delete c;
 		}
 		else if (e) {

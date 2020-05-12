@@ -11,9 +11,10 @@ std::string OpcionSalir::textoOpcion(Jugador* j)
 	return x.str();
 }
 
-std::string OpcionSalir::textoSalida()
+std::string OpcionSalir::textoSalida(Jugador* j)
 {
 	stringstream x;
 	x << "Usted ha salido del juego hasta la procsimaaaaaaaa bush wawawawwawawa bushhhhhh" << endl;
+	j->matar();
 	return x.str();
 }
