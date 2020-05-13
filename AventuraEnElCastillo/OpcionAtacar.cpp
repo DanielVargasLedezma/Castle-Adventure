@@ -8,7 +8,7 @@ OpcionAtacar::OpcionAtacar(OpcionesMenu opcion)
 std::string OpcionAtacar::textoOpcion(Enemigo* e)
 {
 	std::stringstream x;
-	x << "5- Atacar al " << e->getNombre() << endl;
+	x << "| [5] ====== Atacar al " << e->getNombre() << "= |\n";
 	return x.str();
 }
 
@@ -21,6 +21,7 @@ std::string OpcionAtacar::textoSalida(Enemigo* e, Jugador* j)
 			if (j->tieneLanza()) {
 				x << "El " << e->getNombre() << " ha muerto" << endl;
 				e->matar();
+				j->setBajas();
 			}else{
 				x << "Tu arma no tiene ningun efecto contra este enemigo" << endl;
 				x << "F, " << j->getNombre() << " ha muerto" << endl;
@@ -31,6 +32,7 @@ std::string OpcionAtacar::textoSalida(Enemigo* e, Jugador* j)
 			if (j->tieneDaga()) {
 				x << "El " << e->getNombre() << " ha muerto" << endl;
 				e->matar();
+				j->setBajas();
 			}else{
 				x << "Tu arma no tiene ningun efecto contra este enemigo" << endl;
 				x << "F, " << j->getNombre() << " ha muerto" << endl;

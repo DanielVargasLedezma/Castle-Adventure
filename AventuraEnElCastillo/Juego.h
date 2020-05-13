@@ -10,6 +10,7 @@
 #include "Lanza.h"
 #include "Oro.h"
 #include "Windows.h"
+#include "mmsystem.h"
 
 class Juego
 {

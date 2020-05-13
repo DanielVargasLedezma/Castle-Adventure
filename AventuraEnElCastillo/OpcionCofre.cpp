@@ -12,19 +12,20 @@ OpcionCofre::OpcionCofre(OpcionesMenu opcion)
 std::string OpcionCofre::textoOpcion(Jugador* j)
 {
 	stringstream x;
-	x << "6- Abrir cofre" << endl;
+	x << "| [6] ====== Abrir cofre ======================= |\n";
+	
 	return x.str();
 }
 
 std::string OpcionCofre::textoSalida(Cofre *c, Jugador* j)
 {
 	stringstream x;
-	x << "Haz abierto el cofre." << endl;
-	x << "Haz obtenido el objeto: " << c->Abrir()->getNombre() << "!"<< endl;
+	x << "\n Has abierto el cofre." << endl;
+	x << "\n Has obtenido el objeto: " << c->Abrir()->getNombre() << "!"<< endl;
 	j->agregarItem(c->Abrir());
 	c->cambiarEstado();
 	if (c->Abrir()->getNombre() == "Diamante") {
-		x << "DIAMANTES" << endl;
+		x << "\n DIAMANTES" << endl;
 	}
 
 	return x.str();

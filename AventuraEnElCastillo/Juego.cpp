@@ -12,19 +12,23 @@ void Juego::menu()
 	string x;
 	iniciarCuartos();
 	cout << "Ingrese el nombre de su personaje \n";
+	cout << "-> ";
 	cin >> x;
 	j->setNombreJugador(x);
 	j->setCuartoActual(c);
-	cout << "Has aparecido" << endl;
-	cout << "Generando mundo" << endl;
-	cout << "Cargando...";
-	Sleep(1000);
+	cout << endl;
+	cout << "==================================================" << endl;
+	cout << "Has aparecido!" << endl << endl;
+	cout << "Generando mundo..." << endl << endl;
+	cout << "Cargando..." << endl << endl;
+	cout << "==================================================" << endl;
+	Sleep(5000);
 	while (j->estaVivo()) {
 		system("cls");
 		opciones(j);
 	}
-	
-	
+	PlaySound(TEXT("2.wav"), NULL, SND_ASYNC);
+	system("pause");
 	delete j;
 }
 
@@ -117,12 +121,15 @@ void Juego::opciones(Jugador *j)
 	vec.push_back(8);
 P:
 	cout << j->Inventario();
+	cout << "\n Usted tiene las siguientes acciones disponibles: \n\n";
 	cout << x.str();
+	cout << "\n Su opcion -> ";
 	cin >> op;
+	cout<<endl;
 	if (cin.fail()) {
 		cin.clear();
 		cin.ignore();
-		cout << "Se digito una opcion invalida, favor digite algo valido" << endl;
+		cout << " Se digito una opcion invalida, favor digite algo valido" << endl;
 		system("pause");
 		system("cls");
 		goto P;
@@ -133,7 +140,7 @@ P:
 		}
 	}
 	if (!verificar) {
-		cout << "Se digito una opcion no valida, favor digitar una opcion disponible" << endl;
+		cout << " Se digito una opcion no valida, favor digitar una opcion disponible" << endl;
 		system("pause");
 		system("cls");
 		goto P;
@@ -183,8 +190,7 @@ P:
 		system("pause");
 		break;
 	case 8:
-		cout << os->textoSalida(j);
-		system("pause");
+		cout << os->textoSalida(j) <<endl;
 		break;
 	}
 }

@@ -5,6 +5,7 @@ Jugador::Jugador()
 	nombre = "";
 	cuartoActual = nullptr;
 	vivo = true;
+	bajas = 0;
 }
 
 void Jugador::setNombreJugador(string nombre)
@@ -15,6 +16,16 @@ void Jugador::setNombreJugador(string nombre)
 void Jugador::setCuartoActual(Cuarto* cuarto)
 {
 	cuartoActual = cuarto;
+}
+
+void Jugador::setBajas()
+{
+	bajas++;
+}
+
+int Jugador::getBajas()
+{
+	return bajas;
 }
 
 const std::string Jugador::getNombre()
@@ -85,7 +96,7 @@ void Jugador::matar()
 string Jugador::Inventario()
 {
 	std::stringstream x;
-	x << "Inventario de " << nombre << ":" << endl;
+	x << "| Inventario de " << nombre << " |" << endl;
 	for (std::vector<const Item*>::size_type i = 0; i < items.size(); i++) {
 		if (!items[i]) {
 			x << "No tienes items" << endl;
@@ -96,11 +107,12 @@ string Jugador::Inventario()
 		}
 	}
 	stringstream y;
-	y << "Inventario de " << nombre << ":" << endl;
+	y << "| Inventario de " << nombre << " |" << endl;
 	if (x.str() == y.str()) {
-		x << "No tienes items" << endl;
+		x << "\n No tienes items" << endl;
 	}
 	x << endl;
-	
+	x << "| Numero de bajas de " << getNombre() << ": " << getBajas() << " |" << endl;
+	x << endl;
 	return x.str();
 }
