@@ -221,31 +221,17 @@ Cuarto* Cuarto::getCuartoA()
 	return cuartoA;
 }
 
+int Cuarto::getNumero()
+{
+	return numCuarto;
+}
+
 Cuarto::~Cuarto()
 {
-	while(Arriba || Abajo || Derecha || Izquierda || c || e){
-		if (Arriba) {
-			//Arriba->~Cuarto();
-			delete Arriba;
-		}
-		else if (Abajo) {
-			//Abajo->~Cuarto();
-			delete Abajo;
-		}
-		else if (Derecha) {
-			//Derecha->~Cuarto();
-			delete Derecha;
-		}
-		else if (Izquierda) {
-			//Izquierda->~Cuarto();
-			delete Izquierda;
-		}
-		else if (c) {
-			//c->~Cofre();
-			delete c;
-		}
-		else if (e) {
-			delete e;
-		}
+	if (e) {
+		delete e;
+	}
+	if (c) {
+		delete c;
 	}
 }

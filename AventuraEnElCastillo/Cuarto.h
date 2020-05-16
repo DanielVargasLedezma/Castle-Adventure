@@ -49,6 +49,7 @@ public:
 	Enemigo* getEnemigo();
 	Cofre* getCofre();
 	Cuarto* getCuartoA();
+	int getNumero();
 
 	~Cuarto();
 };

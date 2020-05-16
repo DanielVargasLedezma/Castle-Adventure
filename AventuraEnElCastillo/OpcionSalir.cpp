@@ -7,7 +7,7 @@ OpcionSalir::OpcionSalir()
 std::string OpcionSalir::textoOpcion(Jugador* j)
 {
 	stringstream x;
-	x << "| [8] ====== Salir del juego =================== |\n";
+	x << " | [8] ====== Salir del juego =================== |\n";
 	return x.str();
 }
 

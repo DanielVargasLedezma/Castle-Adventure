@@ -11,25 +11,63 @@ void Juego::menu()
 	j = new Jugador;
 	string x;
 	iniciarCuartos();
-	cout << "Ingrese el nombre de su personaje \n";
-	cout << "-> ";
+	cout << " | Ingrese el nombre de su personaje |\n";
+	cout << " -> ";
 	cin >> x;
 	j->setNombreJugador(x);
 	j->setCuartoActual(c);
 	cout << endl;
-	cout << "==================================================" << endl;
-	cout << "Has aparecido!" << endl << endl;
-	cout << "Generando mundo..." << endl << endl;
-	cout << "Cargando..." << endl << endl;
-	cout << "==================================================" << endl;
+	cout << " +=================================================+" << endl;
+	cout << " | Has aparecido!                                  |"  << endl;
+	cout << " |                                                 |" << endl;
+	cout << " | Generando mundo...                              |" << endl;
+	cout << " |                                                 |" << endl;
+	cout << " | Cargando...                                     |" << endl;
+	cout << " |                                                 |" << endl;
+	cout << " +==================================================" << endl << endl;
 	Sleep(5000);
+
+	system("pause");
+	system("cls");
+	cout << historia();
+	system("pause");
+	system("cls");
 	while (j->estaVivo()) {
 		system("cls");
 		opciones(j);
 	}
+
 	PlaySound(TEXT("2.wav"), NULL, SND_ASYNC);
 	system("pause");
 	delete j;
+	eliminarCuartos();
+	delete c;
+}
+
+string Juego::historia()
+{
+	stringstream x;
+	x << endl;
+	x << " +============================================================================================+" << endl;
+	x << " |  En un castillo inhospito y deshabitado se rumoreaba que yacian los diamantes del cielo,   |" << endl;
+	x << " | el objeto mas poderoso de la tierra, se dice que estos diamantes estan resguardados por    |" << endl;
+	x << " | Ghouls y Vampiros, el que posea estos diamantes tendra control de las dimensiones del      |" << endl;
+	x << " | universo. Muchos aventureros han intentado recuperarlos pero no han regresado para         |" << endl;
+	x << " | contarlo.                                                                                  |" << endl;
+	x << " |                                                                                            |" << endl;
+	x << " |  Nuestro personaje es un aventurero del mundo de Crysalys, su pasion es visitar            |" << endl;
+	x << " | lugares lejanos y recolectar los mas raros tesoros. En uno de sus viajes                   |" << endl;
+	x << " | encuentra el aislado castillo donde sabe que estan escondidos los diamantes del cielo.     |" << endl;
+	x << " |                                                                                            |" << endl;
+	x << " |  No son muchos los que tienen el valor de adentrarse en el castillo                        |" << endl;
+	x << " | pero este personaje es valiente y logra encontrar una entrada.                             |" << endl;
+    x << " | Una vez dentro del castillo, el personaje cae en una trampa                                |"<<endl; 
+	x << " | que lo lleva al lugar mas profundo y oscuro, conformado por                                |" << endl;
+	x << " | una serie de cuartos algunos de ellos conectados entre si.                                 |" << endl;
+	x << " +============================================================================================+" << endl;
+	x << "                                        ~Created by Daniel Vargas Ledezma & Joshua Viera Sandi " << endl << endl;
+
+	return x.str();
 }
 
 void Juego::iniciarCuartos()
@@ -71,6 +109,27 @@ void Juego::iniciarCuartos()
 	Enemigo* e2 = new Enemigo("Vampiro");
 	c5->setEnemigo(e2);
 	c->insertarCuarto(c5, 2, x);
+}
+
+void Juego::eliminarCuartos()
+{
+	Cuarto::CA a = Cuarto::CA::arriba;
+	Cuarto::CA b = Cuarto::CA::abajo;
+	Cuarto::CA cc = Cuarto::CA::izquierda;
+	Cuarto::CA d = Cuarto::CA::derecha;
+	Cuarto* temp = this->c->getCuarto(a);
+	/////////////////////////////
+	Cuarto* temp2 = nullptr;
+	temp2 = temp->getCuarto(a);
+	delete temp2;
+	/////////////////////////////
+	Cuarto* temp3 = nullptr;
+	temp3 = temp->getCuarto(cc);
+	delete temp3;
+	////////////////////////////
+	Cuarto* temp4 = nullptr;
+	temp4 = temp->getCuarto(d);
+	delete temp4;
 }
 
 void Juego::opciones(Jugador *j)
@@ -121,6 +180,7 @@ void Juego::opciones(Jugador *j)
 	vec.push_back(8);
 P:
 	cout << j->Inventario();
+	cout << "| " << j->getNombre() << " esta en el cuarto numero " << j->getCuartoActual()->getNumero() << " |" << endl <<endl;
 	cout << "\n Usted tiene las siguientes acciones disponibles: \n\n";
 	cout << x.str();
 	cout << "\n Su opcion -> ";
@@ -152,6 +212,7 @@ P:
 		cout << om->textoSalida(a);
 		Cuarto::CA i = Cuarto::CA::arriba;
 		j->setCuartoActual(j->getCuartoActual()->getCuarto(i));
+		cout << endl;
 		system("pause");
 		break;
 	}
@@ -159,6 +220,7 @@ P:
 		cout << om->textoSalida(b);
 		Cuarto::CA i = Cuarto::CA::abajo;
 		j->setCuartoActual(j->getCuartoActual()->getCuarto(i));
+		cout << endl;
 		system("pause");
 		break;
 	}
@@ -166,6 +228,7 @@ P:
 		cout << om->textoSalida(c);
 		Cuarto::CA i = Cuarto::CA::derecha;
 		j->setCuartoActual(j->getCuartoActual()->getCuarto(i));
+		cout << endl;
 		system("pause");
 		break;
 	}
@@ -173,24 +236,32 @@ P:
 		cout << om->textoSalida(d);
 		Cuarto::CA i = Cuarto::CA::izquierda;
 		j->setCuartoActual(j->getCuartoActual()->getCuarto(i));
+		cout << endl;
 		system("pause");
 		break;
 	}
 	case 5:
 		cout << oa->textoSalida(j->getCuartoActual()->getEnemigo(), j);
+		if (!j->estaVivo()) {
+			PlaySound(TEXT("1.wav"), NULL, SND_ASYNC);
+		}
+		cout << endl;
 		system("pause");
 		break;
 	case 6:
 		cout << oc->textoSalida(j->getCuartoActual()->getCofre(), j);
+		cout << endl;
 		system("pause");
 		break;
 	case 7:
 		cout << om->textoSalida(e);
 		j->setCuartoActual(j->getCuartoActual()->getCuartoA());
+		cout << endl;
 		system("pause");
 		break;
 	case 8:
 		cout << os->textoSalida(j) <<endl;
+		cout << endl;
 		break;
 	}
 }

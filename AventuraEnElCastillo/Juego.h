@@ -20,7 +20,9 @@ private:
 public:
 	Juego();
 	void menu();
+	string historia();
 	void iniciarCuartos();
+	void eliminarCuartos();
 	void opciones(Jugador* j);
 };
 #endif

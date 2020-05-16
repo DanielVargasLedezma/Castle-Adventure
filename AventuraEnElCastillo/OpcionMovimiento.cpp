@@ -11,19 +11,19 @@ std::string OpcionMovimiento::textoOpcion(OpcionesMenu opcion)
 	switch (opcion)
 	{
 	case Opcion::OpcionesMenu::Arriba:
-		x << "| [1] ====== Ir al cuarto de arriba ============ |\n";
+		x << " | [1] ====== Ir al cuarto de arriba ============ |\n";
 		break;
 	case Opcion::OpcionesMenu::Abajo:
-		x << "| [2] ====== Ir al cuarto de abajo ============= |\n";
+		x << " | [2] ====== Ir al cuarto de abajo ============= |\n";
 		break; 
 	case Opcion::OpcionesMenu::Derecha:
-		x << "| [3] ====== Ir al cuarto de la derecha ======== |\n";
+		x << " | [3] ====== Ir al cuarto de la derecha ======== |\n";
 		break;
 	case Opcion::OpcionesMenu::Izquiera:
-		x << "| [4] ====== Ir al cuarto de la izquierda ====== |\n";
+		x << " | [4] ====== Ir al cuarto de la izquierda ====== |\n";
 		break;
 	case Opcion::OpcionesMenu::cuartoAnterior:
-		x << "| [7] ====== Ir al cuarto anterior ============= |\n";
+		x << " | [7] ====== Ir al cuarto anterior ============= |\n";
 		
 		break;
 	}
@@ -36,19 +36,19 @@ std::string OpcionMovimiento::textoSalida(OpcionesMenu opcion)
 	switch (opcion)
 	{
 	case Opcion::OpcionesMenu::Arriba:
-		x << "\n | Te  has movido al cuarto de arriba |\n";
+		x << " | Te  has movido al cuarto de arriba \n";
 		break;
 	case Opcion::OpcionesMenu::Abajo:
-		x << "\n | Te has movido al cuarto de abajo |\n";
+		x << " | Te has movido al cuarto de abajo \n";
 		break;
 	case Opcion::OpcionesMenu::Derecha:
-		x << "\n | Te has movido al cuarto de la derecha |\n";
+		x << " | Te has movido al cuarto de la derecha \n";
 		break;
 	case Opcion::OpcionesMenu::Izquiera:
-		x << "\n | Te has movido al cuarto de la izquierda |\n";
+		x << " | Te has movido al cuarto de la izquierda \n";
 		break;
 	case Opcion::OpcionesMenu::cuartoAnterior:
-		x << "\n | Te has movido al cuarto anterior |\n";
+		x << " | Te has movido al cuarto anterior \n";
 		break;
 	}
 	return x.str();
