@@ -11,6 +11,7 @@ void Juego::menu()
 	j = new Jugador;
 	string x;
 	iniciarCuartos();
+	cout << endl;
 	cout << " | Ingrese el nombre de su personaje |\n";
 	cout << " -> ";
 	cin >> x;
@@ -24,7 +25,7 @@ void Juego::menu()
 	cout << " |                                                 |" << endl;
 	cout << " | Cargando...                                     |" << endl;
 	cout << " |                                                 |" << endl;
-	cout << " +==================================================" << endl << endl;
+	cout << " +=================================================+" << endl << endl;
 	Sleep(5000);
 
 	system("pause");
@@ -179,6 +180,7 @@ void Juego::opciones(Jugador *j)
 	x << os->textoOpcion(j);
 	vec.push_back(8);
 P:
+	cout << endl;
 	cout << j->Inventario();
 	cout << "| " << j->getNombre() << " esta en el cuarto numero " << j->getCuartoActual()->getNumero() << " |" << endl <<endl;
 	cout << "\n Usted tiene las siguientes acciones disponibles: \n\n";
